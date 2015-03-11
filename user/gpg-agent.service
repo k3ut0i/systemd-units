@@ -4,9 +4,8 @@
 Description=GPG Agent service
 Before=default.target
 [Service]
-Type=oneshot
-ExecStart=/bin/sh -c "/usr/bin/systemctl --user set-environment $(gpg-agent --enable-ssh-support --daemon | cut -d\; -f1)"
-ExecStop=/usr/bin/pkill gpg-agent ; /usr/bin/systemctl --no-block --user unset-environment GPG_AGENT_INFO
-RemainAfterExit=yes
+Type=forking
+ExecStart=/usr/bin/gpg-agent --daemon
+ExecStop=/usr/bin/pkill -9 gpg-agent ; /usr/bin/systemctl --no-block --user unset-environment GPG_AGENT_INFO
 [Install]
 WantedBy=default.target

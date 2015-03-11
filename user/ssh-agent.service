@@ -1,0 +1,18 @@
+# Text File
+# @author:   keutoi
+# @file:     user/ssh-agent.service
+# @brief:     TODO (some explanation)
+# created:  2015-03-11 21:33:18
+# modified: 2015-03-11 21:33:18
+[Unit]
+Description=SSH Agent Service
+Before=default.target
+
+[Service]
+Type=forking
+Environment=SSH_AUTH_SOCK=/home/keutoi/.ssh/.ssh-socket
+ExecStart=/usr/bin/ssh-agent -a $SSH_AUTH_SOCK
+ExecStartPost=/usr/bin/systemctl --user set-environment SSH_AUTH_SOCK=/home/keutoi/.ssh/.ssh-socket
+ExecStop=/usr/bin/pkill -9 ssh-agent;/usr/bin/rm -rf /home/keutoi/.ssh/.ssh-socket
+[Install]
+WantedBy=default.target

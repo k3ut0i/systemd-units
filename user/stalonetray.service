@@ -11,10 +11,8 @@ Before = default.target
 [Service]
 Type=forking
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/stalonetray
+ExecStart=/bin/sh -c "/usr/bin/stalonetray&"
 ExecStop=/usr/bin/pkill -9 stalonetray
-RemainAfterExit=yes
 
 [Install]
-
 WantedBy= default.target
