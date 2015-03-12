@@ -3,6 +3,12 @@
 This is my _custom_ collection for archlinux on my laptop  
 I'll try to include sources and docs as i progress.
 
+Must add List:
+* Tor services
+* Socket Capabilites
+* torrent daemons
+* compositing managers
+
 Some references:
 * [coreos][coreos]
 * [freedesktop][freedesktop]

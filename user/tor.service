@@ -1,0 +1,18 @@
+# Text File
+# @author:   keutoi
+# @file:     user/tor.service
+# @brief:     TODO (some explanation)
+# created:  2015-03-12 19:43:40
+# modified: 2015-03-12 19:43:40
+
+[Unit]
+Description=The Onion Router
+Before=default.target
+[Service]
+
+Type=simple
+ExecStart=/usr/bin/tor -f /home/keutoi/.torrc
+ExecStop=/usr/bin/pkill -9 tor
+
+[Install]
+WantedBy=default.target
