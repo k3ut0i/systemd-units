@@ -1,0 +1,19 @@
+# Text File
+# @author:   keutoi
+# @file:     user/xscreensaver.service
+# @brief:     TODO (some explanation)
+# created:  2015-03-13 19:29:12
+# modified: 2015-03-13 19:29:12
+
+[Unit]
+Description=Notification Daemon
+Before=default.target
+
+[Service]
+Type=simple
+Environment=DISPLAY=:0
+ExecStart=/usr/lib/notify-osd-customizable/notify-osd
+ExecStop=/usr/bin/pkill notify-osd
+
+[Install]
+WantedBy=default.target
