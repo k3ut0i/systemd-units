@@ -1,0 +1,11 @@
+[Unit]
+Description=Start offlineimap as a daemon
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/torify /usr/bin/offlineimap
+KillSignal=SIGUSR2
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

@@ -13,6 +13,6 @@ Type=forking
 Environment=DISPLAY=:0
 ExecStart=/bin/sh -c "/usr/bin/stalonetray&"
 ExecStop=/usr/bin/pkill -9 stalonetray
-
+Restart=on-failure
 [Install]
 WantedBy= default.target

@@ -14,6 +14,6 @@ Type=simple
 Environment=DISPLAY=:0
 ExecStart=/usr/lib/notify-osd-customizable/notify-osd
 ExecStop=/usr/bin/pkill notify-osd
-
+Restart=on-failure
 [Install]
 WantedBy=default.target

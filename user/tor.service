@@ -13,6 +13,6 @@ Before=default.target
 Type=simple
 ExecStart=/usr/bin/tor -f /home/keutoi/.torrc
 ExecStop=/usr/bin/pkill -9 tor
-
+Restart=on-failure
 [Install]
 WantedBy=default.target
